@@ -4,8 +4,8 @@
 
 
 class Staff:
-    def __init__(self):
-        pass
+    def __init__(self, name):
+        self.__name = name
 
 
 class Waiter(Staff):
