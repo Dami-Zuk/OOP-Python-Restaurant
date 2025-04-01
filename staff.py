@@ -4,8 +4,9 @@
 
 
 class Staff:
-    def __init__(self, name):
-        self.__name = name
+    def __init__(self, fname, lname):
+        self._fname = fname
+        self._lname = lname
 
 
 class Waiter(Staff):
