@@ -4,11 +4,15 @@
 
 Stations = ["garnish", "fry", "grill", "cold", "dessert"]
 class Staff:
-    def __init__(self, fname:str, lname:str, gender:str, age:int):
+    def __init__(self, fname:str, lname:str, gender:str, age:int, email: str, phone: str):
         self._fname = fname
         self._lname = lname
         self.gender = gender
         self.age = age
+        self.contact = {
+            "email": email,
+            "phone-number": phone
+        }
 
 
 class Server(Staff):
