@@ -16,8 +16,8 @@ class Staff:
 
 
 class Server(Staff):
-    def __init__(self, fname, lname, gender, age):
-        super().__init__(fname, lname, gender, age)
+    #def __init__(self, fname, lname, gender, age):     # You see - we don´t need this at all, its automatically inherited from Staff :)
+        #super().__init__(fname, lname, gender, age)    # Needed ONLY when overriding the parent constructor, but then use *args and **kwargs -> check menu.py Burger
     def serve_food(self):
         print(f'{self._fname} is serving you food')
     def clean_up(self):
@@ -26,8 +26,8 @@ class Server(Staff):
         print(f'{self._fname} is noting down your order')
 
 class Bartender(Staff):
-    def __init__(self, fname, lname, gender, age):
-        super().__init__(fname, lname, gender, age)
+    #def __init__(self, fname, lname, gender, age):     
+        #super().__init__(fname, lname, gender, age)
     def making_drink(self):
         print(f'{self._fname} is preparing your drink...')
 
@@ -63,8 +63,8 @@ class SousChef(Cook):
 #testing:
 
 def fronthouse_test(): #test the fronthouse staff (server and bartender)
-    server1 = Server("Damian", "Zuski", "Female", 25)
-    bartender_staff = Bartender("Quang", "Nguyen", "Male", 20 )
+    server1 = Server("Damian", "Zuski", "Female", 25, "zuski666@gmail.com", "046 123 4567")
+    bartender_staff = Bartender("Quang", "Nguyen", "Male", 20, "vietkingkong@xoxo.com", "040 987 6543")
     Server.serve_food(server1)
     Server.taking_order(server1)
     Bartender.making_drink(bartender_staff)
@@ -85,7 +85,7 @@ print("Front house test has completed!")
 print("")
 
 print("kitchen staff testings:")
-kitchen_test()
+#kitchen_test()
 print("")
 print("kitchen staff test has completed!")
     
