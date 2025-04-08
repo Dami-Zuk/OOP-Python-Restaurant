@@ -43,7 +43,7 @@ class Cook(Staff):
 
 class HeadChef(Cook):
     def __init__(self, fname, lname, gender, age):
-        super().__init__(fname, lname, gender, age, station='garnish')
+        super().__init__(fname, lname, gender, age, 'garnish')
     def receive_order(self):
         print(f'{self._fname} has received the order and assigning the cook')
     def checking_dish(self):
@@ -54,7 +54,7 @@ class HeadChef(Cook):
 
 class SousChef(Cook):
     def __init__(self, fname, lname, gender, age):
-        super().__init__(fname, lname, gender, age, station='garnish')
+        super().__init__(fname, lname, gender, age, 'garnish')
     def garnish(self):
         print(f'{self._fname} is garnishing the dish')
     def taste_test(self):
