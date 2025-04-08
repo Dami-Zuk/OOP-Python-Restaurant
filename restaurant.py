@@ -84,10 +84,10 @@ if __name__ == "__main__":
     my_restaurant = Restaurant("My Quang so 1 Quang Nam")
 
     # Adding staff
-    souschef = staff.SousChef("Quan", "Nguyen", "Male", 50, "temufinalboss@quan.com", "040 234 5678")
+    souschef = staff.SousChef("Quan", "Nguyen", "Male", 50)
     waiter = staff.Server("QuangAnh", "Nguyen", "Male", 24, "quackquang@gmail.com", "046 345 6789")
     bartender = staff.Bartender("Damian", "Zuski", "Female", 25, "zuski666@gmail.com", "046 123 4567")
-    chef = staff.HeadChef("Kim", "Ho", "Male", 18, "yumyumgoodfood@yummy.com", "040 567 8901")
+    chef = staff.HeadChef("Kim", "Ho", "Male", 18)
 
     my_restaurant.add_staff(waiter)
     my_restaurant.add_staff(bartender)
@@ -115,3 +115,4 @@ if __name__ == "__main__":
 
     # Closing restaurant
     my_restaurant.close_restaurant()
+

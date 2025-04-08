@@ -85,7 +85,7 @@ print("Front house test has completed!")
 print("")
 
 print("kitchen staff testings:")
-#kitchen_test()
+kitchen_test()
 print("")
 print("kitchen staff test has completed!")
     
