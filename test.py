@@ -13,6 +13,7 @@ def ui():
         print('6. Show staff') 
         print('7. Add staff')
         print('8. Remove staff')
+        print('0. To Quit')
 
         choice = input('type an option: ')
         if choice == 1:
