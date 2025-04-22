@@ -4,17 +4,15 @@
 
 Stations = ["garnish", "fry", "grill", "cold", "dessert"]
 class Staff:
-    def __init__(self, fname:str, lname:str, gender:str, age:int, salary:int, email: str = "QuangRestaurant@quang.fi", phone: str = "040 666 1337"):
+    def __init__(self, fname:str, lname:str, gender:str, age:int, email: str = "QuangRestaurant@quang.fi", phone: str = "040 666 1337"):
         self._fname = fname
         self._lname = lname
         self.gender = gender
         self.age = age
-        self.salary = salary
         self.contact = {
             "email": email,
             "phone-number": phone
         }
-
 
 class Server(Staff):
     #def __init__(self, fname, lname, gender, age):     # You see - we don´t need this at all, its automatically inherited from Staff :)
@@ -83,7 +81,7 @@ def kitchen_test(): #every staff in the kitchen
     HeadChef.receive_order(headchef_staff)
     Cook.preparing_order(cook1)
     SousChef.garnish(souschef_staff)
-    
+
     headchef_staff.preparing_order()
     headchef_staff.dropped_a_plate()
 

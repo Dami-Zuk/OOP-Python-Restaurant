@@ -2,7 +2,6 @@
 
 """ This file containt Menu with all the Food items """
 
-
 class Menu:
     def __init__(self):
         self.food_items = []
