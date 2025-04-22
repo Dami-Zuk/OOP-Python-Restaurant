@@ -99,5 +99,6 @@ def ui():
 
         else:
             print('Invalid option!')
-            
+
+#test the UI    
 ui()
