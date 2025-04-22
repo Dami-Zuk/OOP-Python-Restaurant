@@ -79,9 +79,9 @@ def ui():
                     break
             else:
                 print('Drink not found!')
-
-        elif choice == 5:
-            my_restaurant.menu.show_menu()
+        elif choice == 5:       
+            print('Menu:')
+            my_restaurant.menu.show_menu()  
 
         elif choice == 6:
             my_restaurant.show_staff()
