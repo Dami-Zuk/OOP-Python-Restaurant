@@ -38,8 +38,12 @@ class Menu:
 
     # Prints all contents of the menu -> to be upgraded, possibly a dict or unpacking the list into a nice string
     def show_menu(self):
-        print(f"All available food: {self.food_items} \n All available drinks: {self.drinks}")
-
+        print(f"All available food:")
+        for item in self.food_items:
+            print(f'{item._name}, {item._price} EUR, {item._category}, {item._calories} kcal, Spicyness: {item._spicyness}, Allergens: {item._allergens}, Vegetarian: {item._is_vege}')
+        print(f"All available drinks:")
+        for drink in self.drinks:
+            print(f'{drink._name}, {drink._price} EUR, Size: {drink._size} ml, Temperature: {drink._temp}')
 
 # Parent FoodItem 
 class FoodItem:
@@ -172,3 +176,9 @@ def drinks_test():
 
 # food_test()
 # drinks_test()
+
+m1 = Menu()
+m1.food_items = [ChickenBurger, ClubSandwich, FalafelPita, BahnMi, SpaghettiBolognese, SpaghettiCarbonara, Lasagne, MacAndCheese, PenneArrabiata,
+            FishAndChips, ShrimpTacos, GrilledSalmon, Margherita, Napoletana, Pepperoni, QuattroFormaggi, SteakFries, BBQRibs, CajunChicken, 
+            FrenchFries, GreekSalad, CeasarSalad, StuffedPeppers]
+m1.drinks = [CocaCola, Fanta, Sprite, Lemonade, StillWater, SparklingWater,Tea, Coffee, IPA, Weizenbier, Pils, Lager, LongDrink, Wine]

@@ -2,15 +2,16 @@
 
 """ This is the main file """
 
-import staff
-import menu
+from staff import Staff, Server, Bartender, Cook, HeadChef, SousChef
+from menu import FoodItem, Menu, Pizza, Burger, Drink, m1
+
 
 
 class Restaurant:
     def __init__(self, name):
         self.name = name
         self.staff_members = []
-        self.menu = menu.Menu()
+        self.menu = Menu()
         self.orders = []  
 
     # Add a staff member
@@ -80,7 +81,7 @@ class Restaurant:
 
 
 # Testing the restaurant setup
-if __name__ == "__main__":
+'''if __name__ == "__main__":
     my_restaurant = Restaurant("My Quang so 1 Quang Nam")
 
     # Adding staff
@@ -115,5 +116,19 @@ if __name__ == "__main__":
     my_restaurant.remove_staff("QuangAnh", "Nguyen")
 
     # Closing restaurant
-    my_restaurant.close_restaurant()
+    my_restaurant.close_restaurant()'''
 
+my_restaurant = Restaurant("My Quang so 1 Quang Nam")
+
+souschef = SousChef("Quan", "Nguyen", "Male", 50, 1200)
+waiter = Server("QuangAnh", "Nguyen", "Male", 24, 2000, "quackquang@gmail.com", "046 345 6789")
+bartender = Bartender("Damian", "Zuski", "Female", 25, 1400, "zuski666@gmail.com", "046 123 4567")
+chef = HeadChef("Kim", "Ho", "Male", 18, 2000)
+
+my_restaurant.add_staff(waiter)   
+my_restaurant.add_staff(bartender)
+my_restaurant.add_staff(chef)
+my_restaurant.add_staff(souschef)
+
+my_restaurant.menu = m1
+my_restaurant.show_menu()

@@ -1,4 +1,4 @@
-from menu import *
+from menu import Menu
 from restaurant import Restaurant
 from staff import Staff
 

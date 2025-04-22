@@ -87,7 +87,7 @@ def kitchen_test(): #every staff in the kitchen
     headchef_staff.preparing_order()
     headchef_staff.dropped_a_plate()
 
-print("Front house staff testings:")
+'''print("Front house staff testings:")
 fronthouse_test()
 print("")
 print("Front house test has completed!")
@@ -96,5 +96,5 @@ print("")
 print("kitchen staff testings:")
 kitchen_test()
 print("")
-print("kitchen staff test has completed!")
+print("kitchen staff test has completed!")'''
     
