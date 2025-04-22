@@ -56,6 +56,9 @@ class FoodItem:
         self._allergens = allergens
         self._is_vege = is_vege
 
+    @property
+    def name(self):
+        return self._name
     def __str__(self):
         return f"{self._name}, {self._price} EUR, {self._category}, {self._calories} kcal, Spicyness: {self._spicyness}, Allergens: {self._allergens}, Vegetarian: {self._is_vege}"
 
@@ -88,6 +91,10 @@ class Drink:
         self._price = price
         self._size = size
         self._temp = temp
+
+    @property
+    def name(self):
+        return self._name
 
     def __str__(self):
         return f"{self._name}, {self._price} EUR, Size: {self._size} ml, Temperature: {self._temp}"
