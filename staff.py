@@ -15,7 +15,6 @@ class Staff:
             "phone-number": phone
         }
 
-
 class Server(Staff):
     #def __init__(self, fname, lname, gender, age):     # You see - we don´t need this at all, its automatically inherited from Staff :)
         #super().__init__(fname, lname, gender, age)    # Needed ONLY when overriding the parent constructor, but then use *args and **kwargs -> check menu.py Burger
@@ -83,7 +82,7 @@ def kitchen_test(): #every staff in the kitchen
     HeadChef.receive_order(headchef_staff)
     Cook.preparing_order(cook1)
     SousChef.garnish(souschef_staff)
-    
+
     headchef_staff.preparing_order()
     headchef_staff.dropped_a_plate()
 
