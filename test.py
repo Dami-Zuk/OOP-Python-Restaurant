@@ -5,16 +5,6 @@ from staff import Staff
 def ui():
     """
     Command-line interface for interacting with the restaurant system.
-    Options:
-    1. Add food
-    2. Add drink
-    3. Remove food
-    4. Remove drink
-    5. Show menu
-    6. Show staff
-    7. Add staff
-    8. Remove staff
-    0. Quit
     """
     while True:
         print('Choose an option:')
@@ -50,8 +40,6 @@ def ui():
 
         elif choice == 2:
             print('Add drink')
-            drink_name = input('Enter drink name: ')
-            drink_price = float(input('Enter drink price: '))
             drink_type = input('Enter drink type (AlcoDrink, Drink): ')
             name = input("Enter name: ")
             price = float(input("Enter price: "))
