@@ -15,7 +15,7 @@ def ui():
         print('8. Remove staff')
         print('0. To Quit')
 
-        choice = input('type an option: ')
+        choice = int(input('type an option: '))
         if choice == 1:
             print('Add food')
             food_type = input('Enter food type (Pizza, Burger, Salad, Dessert): ')
@@ -50,6 +50,10 @@ def ui():
                 if member._fname == f_name and member._lname == l_name:
                     my_restaurant.remove_staff(member)
                     break
+        elif choice == 9:
+            pass
+        elif choice == 0:
+            break
 
         else:
             print('Invalid option!')
