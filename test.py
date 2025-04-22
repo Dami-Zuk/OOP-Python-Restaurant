@@ -43,13 +43,35 @@ def ui():
 
         elif choice == 3:
             m1 = Menu()
+            food_name = input('Enter food name to remove: ')
+            for food in my_restaurant.menu.food_items:
+                if food._name == food_name:
+                    my_restaurant.menu.remove_food(food)
+                    break
+            else:
+                print('Food not found!')
         elif choice == 4:
             m1 = Menu()
+            drink_name = input('Enter drink name to remove: ')
+            for drink in my_restaurant.menu.drinks:
+                if drink._name == drink_name:
+                    my_restaurant.menu.remove_drink(drink)
+                    break
+            else:
+                print('Drink not found!')
         elif choice == 5:       
             m1 = Menu()
+            print('Menu:')
+            print('Food items:')
+            for food in my_restaurant.menu.food_items:
+                print(f'Name: {food._name}, Price: {food._price}, Type: {food._type}')
+            print('Drinks:')
+            for drink in my_restaurant.menu.drinks:
+                print(f'Name: {drink._name}, Price: {drink._price}, Alcohol content: {drink._alcohol_content}')
+
         elif choice == 6:  
             my_restaurant.show_staff()
-        
+
         elif choice == 7: 
             new_staff = Staff(input('First name: '), input('Last name: '), input('Gender: '), input('Salary:'))      
             my_restaurant.add_staff(new_staff)    
