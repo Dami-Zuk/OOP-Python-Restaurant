@@ -131,3 +131,4 @@ my_restaurant.add_staff(chef)
 my_restaurant.add_staff(souschef)
 
 my_restaurant.menu = m1
+my_restaurant.show_staff()
