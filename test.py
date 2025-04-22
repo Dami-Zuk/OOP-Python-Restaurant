@@ -29,7 +29,18 @@ def ui():
                 print('Invalid food type!')
             my_restaurant.menu.add_food()
         elif choice == 2:
-            pass
+            print('Add drink')
+            drink_type = input('Enter drink type (AlcoDrink, Drink): ')
+            if drink_type == 'AlcoDrink':
+                alco_drink = AlcoDrink('Whiskey', 10.99, 40)
+                my_restaurant.menu.add_drink(alco_drink)
+            elif drink_type == 'Drink':
+                drink = Drink('Coca Cola', 2.99, 0)
+                my_restaurant.menu.add_drink(drink)
+            else:
+                print('Invalid drink type!')
+                my_restaurant.menu.add_drink()
+
         elif choice == 3:
             m1 = Menu()
         elif choice == 4:
