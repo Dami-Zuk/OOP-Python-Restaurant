@@ -31,15 +31,20 @@ def ui():
         elif choice == 2:
             print('Add drink')
             drink_type = input('Enter drink type (AlcoDrink, Drink): ')
+            name = input("Enter name: ")
+            price = float(input("Enter price: "))
+            size = float(input("Enter size in ml: "))
+            temp = input("Enter temperature (Hot, Cold, Normal): ")
+
             if drink_type == 'AlcoDrink':
-                alco_drink = AlcoDrink('Whiskey', 10.99, 40)
+                alcohol_content = float(input("Enter alcohol content (%): "))
+                alco_drink = AlcoDrink(alcohol_content, name, price, size, temp)
                 my_restaurant.menu.add_drink(alco_drink)
             elif drink_type == 'Drink':
-                drink = Drink('Coca Cola', 2.99, 0)
+                drink = Drink(name, price, size, temp)
                 my_restaurant.menu.add_drink(drink)
             else:
                 print('Invalid drink type!')
-                my_restaurant.menu.add_drink()
 
         elif choice == 3:
             m1 = Menu()
