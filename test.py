@@ -28,12 +28,17 @@ def ui():
             print('Add food')
             food_name = input('Enter food name: ')
             food_price = float(input('Enter food price: '))
-            food_type = input('Enter food type (Pizza, Burger, Salad, Dessert): ')
+            calories = int(input("Enter calories: "))
+            spicyness = input("Enter spicyness (Low, Medium, Hot): ")
+            allergens = input("Enter allergens (comma separated): ")
+            is_vege = input("Is it vegetarian (yes/no): ").lower() == "yes"
+            size = input("Enter size (S, M, L, XL): ")
+            food_type = input('Enter food type (Pizza, Burger): ')
             if food_type == 'Pizza':
-                pizza = Pizza(food_name, food_price, 'Large', 'Custom ingredients')
+                pizza = Pizza(size, food_name, food_price, "Pizza", calories, spicyness, allergens, is_vege)
                 my_restaurant.menu.add_food(pizza)
             elif food_type == 'Burger':
-                burger = Burger(food_name, food_price, 'Beef', 'Custom ingredients')
+                burger = Burger(size, food_name, food_price, "Burger", calories, spicyness, allergens, is_vege)
                 my_restaurant.menu.add_food(burger)
             else:
                 print('Invalid food type!')
