@@ -40,7 +40,7 @@ class Menu:
     def show_menu(self):
         print(f"All available food:")
         for item in self.food_items:
-            print(f'{item._name}, {item._price} EUR, {item._category}, {item._calories} kcal, Spicyness: {item._spicyness}, Allergens: {item._allergens}, Vegetarian: {item._is_vege}')
+            print(f'{item._name}, {item._price} EUR, {item._calories} kcal, Spicyness: {item._spicyness}, Allergens: {item._allergens}, Vegetarian: {item._is_vege}')
         print(f"All available drinks:")
         for drink in self.drinks:
             print(f'{drink._name}, {drink._price} EUR, Size: {drink._size} ml, Temperature: {drink._temp}')
