@@ -16,8 +16,6 @@ class Staff:
         }
 
 class Server(Staff):
-    #def __init__(self, fname, lname, gender, age):     # You see - we don´t need this at all, its automatically inherited from Staff :)
-        #super().__init__(fname, lname, gender, age)    # Needed ONLY when overriding the parent constructor, but then use *args and **kwargs -> check menu.py Burger
     def serve_food(self):
         print(f'{self._fname} is serving you food')
     def clean_up(self):
@@ -26,14 +24,12 @@ class Server(Staff):
         print(f'{self._fname} is noting down your order')
 
 class Bartender(Staff):
-    #def __init__(self, fname, lname, gender, age):     
-        #super().__init__(fname, lname, gender, age)
     def making_drink(self):
         print(f'{self._fname} is preparing your drink...')
 
 class Cook(Staff):
     def __init__(self, fname, lname, gender, age, salary, station):
-        assert station in Stations, f"{station} station does not exist in {Stations}"
+        assert station in Stations, f"{station} station does not exist in {Stations}" #Checking if the station name is valid
         super().__init__(fname, lname, gender, age, salary)
         self.station = station
     def preparing_order(self):
