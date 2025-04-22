@@ -1,4 +1,4 @@
-from menu import Menu, FoodItem, Pizza, Drink, Burger, Salad, Dessert
+from menu import Menu, FoodItem, Pizza, Drink, Burger, AlcoDrink
 from restaurant import Restaurant, my_restaurant
 from staff import Staff
 
@@ -22,10 +22,6 @@ def ui():
                 my_restaurant.menu.add_food(Pizza)
             elif food_type == 'Burger':
                 my_restaurant.menu.add_food(Burger)
-            elif food_type == 'Salad':
-                my_restaurant.menu.add_food(Salad)
-            elif food_type == 'Dessert':
-                my_restaurant.menu.add_food(Dessert)
             else:
                 print('Invalid food type!')
             my_restaurant.menu.add_food()

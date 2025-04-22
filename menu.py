@@ -12,6 +12,7 @@ class Menu:
     def add_food(self, food_item):
         if food_item not in self.food_items:
             self.food_items.append(food_item)
+            print(f'added {food_item._name}')
         else:
             print(f"The {food_item} is already on the menu!")
 
