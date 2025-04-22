@@ -13,15 +13,18 @@ def ui():
         print('6. Show staff') 
         print('7. Add staff')
         print('8. Remove staff')
+        print('0. To Quit')
 
         choice = input('type an option: ')
         if choice == 1:
             print('Add food')
             food_type = input('Enter food type (Pizza, Burger, Salad, Dessert): ')
             if food_type == 'Pizza':
-                my_restaurant.menu.add_food(Pizza)
+                pizza = Pizza('Pineapple Paradise', 15.99, 'Large', 'Tomato sauce, pineapple, ham')
+                my_restaurant.menu.add_food(pizza)
             elif food_type == 'Burger':
-                my_restaurant.menu.add_food(Burger)
+                burger = Burger('Bacon tornado', 19.99, 'Beef', 'Lettuce, tomato, cheese, bacon')
+                my_restaurant.menu.add_food(burger)
             else:
                 print('Invalid food type!')
             my_restaurant.menu.add_food()
@@ -29,5 +32,26 @@ def ui():
             pass
         elif choice == 3:
             m1 = Menu()
+        elif choice == 4:
+            m1 = Menu()
+        elif choice == 5:       
+            m1 = Menu()
+        elif choice == 6:  
+            my_restaurant.show_staff()
+        
+        elif choice == 7: 
+            new_staff = Staff(input('First name: '), input('Last name: '), input('Gender: '), input('Salary:'))      
+            my_restaurant.add_staff(new_staff)    
+        
+        elif choice == 8:
+            f_name = input('First name: ')
+            l_name = input('Last name: ')
+            for member in my_restaurant.staff_members:
+                if member._fname == f_name and member._lname == l_name:
+                    my_restaurant.remove_staff(member)
+                    break
+
+        else:
+            print('Invalid option!')
             
 ui()
