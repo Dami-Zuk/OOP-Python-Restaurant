@@ -12,7 +12,7 @@ def ui():
         choice = input('type an option: ')
         if choice == 1:
             r1 = Restaurant("Q res")
-            r1.
+            #r1.
         if choice == 2:
             pass
         if choice == 3:
