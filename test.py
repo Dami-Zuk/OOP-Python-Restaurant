@@ -3,6 +3,19 @@ from restaurant import Restaurant, my_restaurant
 from staff import Staff
 
 def ui():
+    """
+    Command-line interface for interacting with the restaurant system.
+    Options:
+    1. Add food
+    2. Add drink
+    3. Remove food
+    4. Remove drink
+    5. Show menu
+    6. Show staff
+    7. Add staff
+    8. Remove staff
+    0. Quit
+    """
     while True:
         print('Choose an option:')
         print('1. Add food')
@@ -10,26 +23,35 @@ def ui():
         print('3. Remove food')
         print('4. Remove drink')
         print('5. Show menu')
-        print('6. Show staff') 
+        print('6. Show staff')
         print('7. Add staff')
         print('8. Remove staff')
         print('0. To Quit')
 
-        choice = int(input('type an option: '))
+        try:
+            choice = int(input('Type an option: '))
+        except ValueError:
+            print('Invalid input! Please enter a number.')
+            continue
+
         if choice == 1:
             print('Add food')
+            food_name = input('Enter food name: ')
+            food_price = float(input('Enter food price: '))
             food_type = input('Enter food type (Pizza, Burger, Salad, Dessert): ')
             if food_type == 'Pizza':
-                pizza = Pizza('Pineapple Paradise', 15.99, 'Large', 'Tomato sauce, pineapple, ham')
+                pizza = Pizza(food_name, food_price, 'Large', 'Custom ingredients')
                 my_restaurant.menu.add_food(pizza)
             elif food_type == 'Burger':
-                burger = Burger('Bacon tornado', 19.99, 'Beef', 'Lettuce, tomato, cheese, bacon')
+                burger = Burger(food_name, food_price, 'Beef', 'Custom ingredients')
                 my_restaurant.menu.add_food(burger)
             else:
                 print('Invalid food type!')
-            my_restaurant.menu.add_food()
+
         elif choice == 2:
             print('Add drink')
+            drink_name = input('Enter drink name: ')
+            drink_price = float(input('Enter drink price: '))
             drink_type = input('Enter drink type (AlcoDrink, Drink): ')
             name = input("Enter name: ")
             price = float(input("Enter price: "))
@@ -47,55 +69,44 @@ def ui():
                 print('Invalid drink type!')
 
         elif choice == 3:
-            m1 = Menu()
             food_name = input('Enter food name to remove: ')
             for food in my_restaurant.menu.food_items:
-                if food._name == food_name:
+                if food.name == food_name:
                     my_restaurant.menu.remove_food(food)
                     break
             else:
                 print('Food not found!')
+
         elif choice == 4:
-            m1 = Menu()
             drink_name = input('Enter drink name to remove: ')
             for drink in my_restaurant.menu.drinks:
-                if drink._name == drink_name:
+                if drink.name == drink_name:
                     my_restaurant.menu.remove_drink(drink)
                     break
             else:
                 print('Drink not found!')
         elif choice == 5:       
-            m1 = Menu()
             print('Menu:')
-            print('Food items:')
-            for food in my_restaurant.menu.food_items:
-                print(f'Name: {food._name}, Price: {food._price}, Category: {food._category}')
+            my_restaurant.menu.show_menu()  
 
-            print('Drinks:')
-            for drink in my_restaurant.menu.drinks:
-                if isinstance(drink, AlcoDrink):
-                    print(f'Name: {drink._name}, Price: {drink._price}, Alcohol content: {drink._alc}%')
-                else:
-                    print(f'Name: {drink._name}, Price: {drink._price}, Size: {drink._size}ml, Temperature: {drink._temp}')
-
-
-        elif choice == 6:  
+        elif choice == 6:
             my_restaurant.show_staff()
 
-        elif choice == 7: 
-            new_staff = Staff(input('First name: '), input('Last name: '), input('Gender: '), input('Salary:'))      
-            my_restaurant.add_staff(new_staff)    
-        
+        elif choice == 7:
+            first_name = input('First name: ')
+            last_name = input('Last name: ')
+            gender = input('Gender: ')
+            salary = float(input('Salary: '))
+            new_staff = Staff(first_name, last_name, gender, salary)
+            my_restaurant.add_staff(new_staff)
+
         elif choice == 8:
-            f_name = input('First name: ')
-            l_name = input('Last name: ')
-            for member in my_restaurant.staff_members:
-                if member._fname == f_name and member._lname == l_name:
-                    my_restaurant.remove_staff(member)
-                    break
-        elif choice == 9:
-            pass
+            first_name = input('First name: ')
+            last_name = input('Last name: ')
+            my_restaurant.remove_staff(first_name, last_name)
+
         elif choice == 0:
+            print('Exiting...')
             break
 
         else:
