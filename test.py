@@ -64,10 +64,15 @@ def ui():
             print('Menu:')
             print('Food items:')
             for food in my_restaurant.menu.food_items:
-                print(f'Name: {food._name}, Price: {food._price}, Type: {food._type}')
+                print(f'Name: {food._name}, Price: {food._price}, Category: {food._category}')
+
             print('Drinks:')
             for drink in my_restaurant.menu.drinks:
-                print(f'Name: {drink._name}, Price: {drink._price}, Alcohol content: {drink._alcohol_content}')
+                if isinstance(drink, AlcoDrink):
+                    print(f'Name: {drink._name}, Price: {drink._price}, Alcohol content: {drink._alc}%')
+                else:
+                    print(f'Name: {drink._name}, Price: {drink._price}, Size: {drink._size}ml, Temperature: {drink._temp}')
+
 
         elif choice == 6:  
             my_restaurant.show_staff()
