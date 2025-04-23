@@ -6,6 +6,7 @@ def ui():
     """
     Command-line interface for interacting with the restaurant system.
     """
+    print("Welcome to Damian Fried Chicken - DFC")
     while True:
         print('Choose an option:')
         print('1. Add food')
