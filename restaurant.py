@@ -118,7 +118,7 @@ class Restaurant:
     # Closing restaurant
     my_restaurant.close_restaurant()'''
 
-my_restaurant = Restaurant("My Quang so 1 Quang Nam")
+my_restaurant = Restaurant("Damian Fried Chicken - DFC")
 
 souschef = SousChef("Quan", "Nguyen", "Male", 50, 1200)
 waiter = Server("QuangAnh", "Nguyen", "Male", 24, 2000, "quackquang@gmail.com", "046 345 6789")
@@ -131,4 +131,3 @@ my_restaurant.add_staff(chef)
 my_restaurant.add_staff(souschef)
 
 my_restaurant.menu = m1
-my_restaurant.show_staff()
