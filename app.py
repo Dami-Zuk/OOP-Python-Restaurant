@@ -90,8 +90,9 @@ def ui():
             first_name = input('First name: ')
             last_name = input('Last name: ')
             gender = input('Gender: ')
+            age = input("Age: ")
             salary = float(input('Salary: '))
-            new_staff = Staff(first_name, last_name, gender, salary)
+            new_staff = Staff(first_name, last_name, gender, age, salary)
             my_restaurant.add_staff(new_staff)
 
         elif choice == 8:
